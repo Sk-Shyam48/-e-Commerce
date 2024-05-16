@@ -11,6 +11,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _bottomNavIndex = 0;
+
   final List<IconData> iconDataList = [
     Icons.home,
     Icons.favorite,
@@ -89,25 +90,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 _buildPromoCard(
                   text: '30% OFF During COVID 19',
                   color: Color.fromRGBO(239, 104, 44, 1),
-                  imagePath: 'assets/image-1.png',
+                  imagePath: 'assets/slide1.png',
                 ),
                 SizedBox(width: 20),
                 _buildPromoCard(
                   text: '30% OFF During COVID 19',
                   color: Color.fromRGBO(16, 132, 245, 1),
-                  imagePath: 'assets/image-1.png',
+                  imagePath: 'assets/slide1.png',
                 ),
                 SizedBox(width: 20),
                 _buildPromoCard(
                   text: '30% OFF During COVID 19',
                   color: Colors.red,
-                  imagePath: 'assets/image-1.png',
+                  imagePath: 'assets/slide1.png',
                 ),
                 SizedBox(width: 20),
                 _buildPromoCard(
                   text: '30% OFF During COVID 19',
                   color: Colors.green,
-                  imagePath: 'assets/image-1.png',
+                  imagePath: 'assets/slide1.png',
                 ),
               ],
             ),
@@ -171,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       title: 'Apple Watch Series 6',
                       price: '\$140',
                       originalPrice: '\$200',
-                      imagePath: 'assets/image-1.png',
+                      imagePath: 'assets/Apple Watch -M2.png',
                       discount: '30% OFF',
                       onTap: () {
                         Navigator.push(
@@ -182,9 +183,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     _buildProductCard(
                       title: 'Apple Watch Series 6',
-                      price: '\$140',
-                      originalPrice: '\$200',
-                      imagePath: 'assets/image-1.png',
+                      price: '\$100',
+                      originalPrice: '\$250',
+                      imagePath: 'assets/p1.png',
                       discount: '30% OFF',
                       onTap: () {
                         // Navigator.push(
@@ -208,9 +209,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     _buildProductCard(
                       title: 'Apple Watch Series 6',
-                      price: '\$140',
+                      price: '\$100',
                       originalPrice: '\$200',
-                      imagePath: 'assets/image-1.png',
+                      imagePath: 'assets/p2.png',
                       discount: '30% OFF',
                       onTap: () {
                         // Navigator.push(
@@ -264,7 +265,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
       width: 350,
       height: 150,
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         color: color,
@@ -284,7 +285,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 1),
+                SizedBox(height: 10),
                 TextButton(
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.white,
@@ -323,10 +324,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.fromLTRB(5, 43, 5, 0),
         margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: BorderRadius.circular(15),
           color: Colors.grey.shade100,
         ),
         child: Column(
@@ -336,7 +337,8 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 05),
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
                   decoration: BoxDecoration(
                     color: Colors.orange,
                     borderRadius: BorderRadius.circular(8.0),
@@ -360,16 +362,20 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Image.asset(
                 imagePath,
                 height: 80,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
-            SizedBox(height: 15),
+            SizedBox(
+              height: 40,
+            ),
             Container(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 20),
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8.0),
-              ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  )),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -414,8 +420,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<IconData> _iconDataList = [
     Icons.watch,
-    Icons.favorite,
-    Icons.safety_check,
+    Icons.shop,
+    Icons.sports,
     Icons.home,
     Icons.settings,
     Icons.notifications,

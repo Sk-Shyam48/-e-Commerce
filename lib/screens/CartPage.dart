@@ -45,7 +45,7 @@ class _CartPageState extends State<CartPage> {
               ),
             ),
           ),
-          SizedBox(width: 16.0),
+          SizedBox(width: 15),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,22 +114,22 @@ class _CartPageState extends State<CartPage> {
           name: "Apple Watch series 6",
           size: "Size 36",
           price: 140,
-          imagePath: 'assets/image-1.png'),
+          imagePath: 'assets/Apple Watch -M2.png'),
       CartItem(
           name: "Sony ear headphone",
           size: "Size 36",
           price: 50,
-          imagePath: 'assets/image-1.png'),
+          imagePath: 'assets/Ear Headphone.png'),
       CartItem(
           name: "Apple Watch series 6",
           size: "Size 36",
           price: 140,
-          imagePath: 'assets/image-1.png'),
+          imagePath: 'assets/White Tshirt.png'),
       CartItem(
           name: "Apple Watch series 6",
           size: "Size 36",
           price: 140.0,
-          imagePath: 'assets/image-1.png'),
+          imagePath: 'assets/Nike Shoe.png'),
     ];
 
     double totalPrice = items.fold(0, (total, item) => total + item.price);

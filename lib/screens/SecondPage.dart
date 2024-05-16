@@ -28,8 +28,12 @@ class SecondPage extends StatelessWidget {
               height: 340,
               decoration: BoxDecoration(
                 color: Colors.grey.shade100,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(200),
+                  bottomRight: Radius.circular(200),
+                ),
                 image: DecorationImage(
-                  image: AssetImage('assets/image-1.png'),
+                  image: AssetImage('assets/Apple Watch -M2.png'),
                   fit: BoxFit.contain,
                 ),
               ),
