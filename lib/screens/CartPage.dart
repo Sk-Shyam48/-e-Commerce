@@ -128,7 +128,7 @@ class _CartPageState extends State<CartPage> {
       CartItem(
           name: "Apple Watch series 6",
           size: "Size 36",
-          price: 140.0,
+          price: 300,
           imagePath: 'assets/Nike Shoe.png'),
     ];
 
@@ -177,7 +177,7 @@ class _CartPageState extends State<CartPage> {
           ),
           Container(
             width: double.infinity,
-            padding: EdgeInsets.fromLTRB(30, 30, 30, 50),
+            padding: EdgeInsets.fromLTRB(30, 30, 30, 60),
             child: TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(

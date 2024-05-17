@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
   animated_bottom_navigation_bar: ^1.3.3
   cuberto_bottom_bar: ^3.0.0
+  http: ^0.13.4
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,7 +1,12 @@
 import 'package:e_commece/screens/CartPage.dart';
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatelessWidget {
+class SecondPage extends StatefulWidget {
+  @override
+  State<SecondPage> createState() => _SecondPageState();
+}
+
+class _SecondPageState extends State<SecondPage> {
   final List<int> sizes = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
 
   @override
@@ -25,12 +30,12 @@ class SecondPage extends StatelessWidget {
             // Image Container
             Container(
               width: 500,
-              height: 340,
+              height: 350,
               decoration: BoxDecoration(
                 color: Colors.grey.shade100,
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(200),
-                  bottomRight: Radius.circular(200),
+                  bottomLeft: Radius.circular(150),
+                  bottomRight: Radius.circular(150),
                 ),
                 image: DecorationImage(
                   image: AssetImage('assets/Apple Watch -M2.png'),
@@ -171,7 +176,7 @@ class SecondPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
 
             Container(
               width: double.infinity,
