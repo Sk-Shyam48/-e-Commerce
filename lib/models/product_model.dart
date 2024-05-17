@@ -8,8 +8,6 @@ class Product {
   final Map<String, dynamic> rating;
 
   // Additional properties
-  final String originalPrice;
-  final String discount;
 
   Product({
     required this.id,
@@ -20,8 +18,6 @@ class Product {
     required this.image,
     required this.rating,
     // Additional properties
-    required this.originalPrice,
-    required this.discount,
   });
 
   // Factory method to create a Product from JSON
@@ -36,10 +32,6 @@ class Product {
       rating: json['rating'],
 
       // Additional properties with default values
-      originalPrice:
-          json['originalPrice'] != null ? json['originalPrice'].toString() : '',
-
-      discount: json['discount'] != null ? json['discount'] : '',
     );
   }
 }

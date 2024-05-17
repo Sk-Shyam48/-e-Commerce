@@ -1,7 +1,12 @@
-import 'package:e_commece/screens/CartPage.dart';
 import 'package:flutter/material.dart';
+import 'package:e_commece/screens/CartPage.dart';
+import 'package:e_commece/models/product_model.dart';
 
 class SecondPage extends StatefulWidget {
+  final Product product;
+
+  const SecondPage({required this.product});
+
   @override
   State<SecondPage> createState() => _SecondPageState();
 }
@@ -20,7 +25,6 @@ class _SecondPageState extends State<SecondPage> {
             Navigator.pop(context);
           },
         ),
-        // toolbarHeight: 10,
       ),
       body: Center(
         child: Column(
@@ -30,7 +34,7 @@ class _SecondPageState extends State<SecondPage> {
             // Image Container
             Container(
               width: 500,
-              height: 350,
+              height: 300,
               decoration: BoxDecoration(
                 color: Colors.grey.shade100,
                 borderRadius: BorderRadius.only(
@@ -38,25 +42,23 @@ class _SecondPageState extends State<SecondPage> {
                   bottomRight: Radius.circular(150),
                 ),
                 image: DecorationImage(
-                  image: AssetImage('assets/Apple Watch -M2.png'),
+                  image: NetworkImage(widget.product.image),
                   fit: BoxFit.contain,
                 ),
               ),
             ),
             SizedBox(height: 20),
             // Product Title
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Apple Watch Series 6',
+                widget.product.title,
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
@@ -95,7 +97,7 @@ class _SecondPageState extends State<SecondPage> {
                   Row(
                     children: [
                       Text(
-                        '\$140',
+                        '\$${widget.product.price}',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -123,7 +125,6 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             SizedBox(height: 20),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
@@ -135,11 +136,10 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             SizedBox(height: 10),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'This is a placeholder description for the Apple Watch Series 6. It provides various features including health tracking, notifications, and more. The device is highly popular and available in stock.',
+                widget.product.description,
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey[700],
@@ -147,12 +147,10 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             SizedBox(height: 20),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
             ),
             SizedBox(height: 10),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: SingleChildScrollView(
@@ -177,14 +175,15 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             SizedBox(height: 40),
-
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: TextButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CartPage()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CartPage()),
+                  );
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: Color.fromRGBO(239, 104, 44, 1),
@@ -196,9 +195,10 @@ class _SecondPageState extends State<SecondPage> {
                 child: Text(
                   'Add to Cart',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),

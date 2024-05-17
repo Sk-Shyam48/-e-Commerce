@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'SecondPage.dart';
+import 'CartPage.dart';
+import 'FavoritePage.dart';
+import 'ProfilePage.dart';
 import 'package:cuberto_bottom_bar/cuberto_bottom_bar.dart';
 import 'package:http/http.dart' as http;
 import 'package:e_commece/models/product_model.dart';
@@ -190,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SecondPage(),
+                            builder: (context) => SecondPage(product: product),
                           ),
                         );
                       },
@@ -229,6 +232,35 @@ class _MyHomePageState extends State<MyHomePage> {
           setState(() {
             _bottomNavIndex = position;
           });
+
+          switch (position) {
+            case 0: // Home tab
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage()),
+              );
+              break;
+            case 1: // Favorite tab
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => favoritePage()),
+              );
+              break;
+            case 2: // Cart tab
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CartPage()),
+              );
+              break;
+            case 3: // Profile tab
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
+              break;
+            default:
+              break;
+          }
         },
       ),
     );
