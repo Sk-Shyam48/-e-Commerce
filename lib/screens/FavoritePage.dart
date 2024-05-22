@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 
-class favoritePage extends StatefulWidget {
-  const favoritePage({super.key});
+class FavoritePage extends StatefulWidget {
+  const FavoritePage({super.key});
 
   @override
-  State<favoritePage> createState() => _MyWidgetState();
+  State<FavoritePage> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<favoritePage> {
+class _MyWidgetState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar());
+    return Scaffold(
+        appBar: AppBar(
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+    ));
   }
 }

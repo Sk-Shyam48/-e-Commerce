@@ -5,9 +5,8 @@ class Product {
   final String description;
   final String category;
   final String image;
-  final Map<String, dynamic> rating;
-
-  // Additional properties
+  final double rating;
+  final int count;
 
   Product({
     required this.id,
@@ -17,21 +16,19 @@ class Product {
     required this.category,
     required this.image,
     required this.rating,
-    // Additional properties
+    required this.count,
   });
 
-  // Factory method to create a Product from JSON
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      id: json['id'],
-      title: json['title'],
+      id: json['id'] as int,
+      title: json['title'] as String,
       price: json['price'].toDouble(),
-      description: json['description'],
-      category: json['category'],
-      image: json['image'],
-      rating: json['rating'],
-
-      // Additional properties with default values
+      description: json['description'] as String,
+      category: json['category'] as String,
+      image: json['image'] as String,
+      rating: (json['rating']['rate'] as num).toDouble(),
+      count: (json['rating']['count'] as num).toInt(),
     );
   }
 }
