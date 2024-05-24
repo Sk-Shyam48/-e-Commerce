@@ -86,7 +86,7 @@ class _SecondPageState extends State<SecondPage> {
           },
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,38 +102,39 @@ class _SecondPageState extends State<SecondPage> {
                 });
               },
             ),
-            const SizedBox(height: 40),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(30, 25, 30, 40),
-              child: TextButton(
-                onPressed: () {
-                  addToCart();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CartPage(cartItems: cartItems),
-                    ),
-                  );
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(239, 104, 44, 1),
-                  padding: const EdgeInsets.symmetric(vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
+            const SizedBox(height: 80),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: TextButton(
+            onPressed: () {
+              addToCart();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CartPage(cartItems: cartItems),
                 ),
-                child: const Text(
-                  'Add to Cart',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+              );
+            },
+            style: TextButton.styleFrom(
+              backgroundColor: const Color.fromRGBO(239, 104, 44, 1),
+              padding: const EdgeInsets.symmetric(vertical: 15),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
             ),
-          ],
+            child: const Text(
+              'Add to Cart',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ),
       ),
     );

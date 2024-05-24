@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:e_commece/models/product_model.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -37,10 +39,8 @@ class ProductInfo extends StatelessWidget {
                 allowHalfRating: true,
                 itemCount: 5,
                 itemSize: 20,
-                itemBuilder: (context, _) => const Icon(
-                  Icons.star,
-                  color: Color.fromRGBO(239, 104, 44, 1),
-                ),
+                itemBuilder: (context, _) =>
+                    const Icon(Icons.star, color: Colors.amber),
                 onRatingUpdate: (rating) {},
               ),
               SizedBox(width: 20),
@@ -83,7 +83,7 @@ class ProductInfo extends StatelessWidget {
                 'Available in stock',
                 style: TextStyle(
                   fontSize: 14,
-                  color: Colors.black,
+                  color: Colors.green,
                 ),
               ),
             ],
